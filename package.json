@@ -1,0 +1,24 @@
+{
+  "name": "binarycode",
+  "version": "1.0.0-beta",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "binary",
+    "code",
+    "decode",
+    "binarycode"
+  ],
+  "author": "AmtiXDev",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7"
+  }
+}

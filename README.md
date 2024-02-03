@@ -15,87 +15,11 @@
 </div>
 
 # binarycode
-'binarycode' is a versatile npm package that provides functionalities for encoding text to binary, decoding binary to text, fetching binary data from URLs, and basic text encryption/decryption.
+`binarycode` is a versatile npm package that provides functionalities for encoding text to binary, decoding binary to text, fetching binary data from URLs, and basic text encryption/decryption.
 ## Installation
-You can install the 'binarycode' package using npm:
+You can install the `binarycode` package using npm:
 
 ```bash
 npm install binarycode
 ```
 
-# Usage
-Text to Binary
-Convert a string of text to binary representation:
-```js
-const binarycode = require('binarycode');
-
-const text = 'The quick brown 🦊 jumps over 13 lazy 🐶.';
-const binary = binarycode.textToBinary(text);
-
-console.log(binary);
-// Output: 01010100 01101000 01100101 00100000 01110001 01110101 01101001 01100011 01101011 00100000 01100010 01110010 01101111 01110111 01101110 00100000 11110000 10011111 10100110 10001010 00100000 01101010 01110101 01101101 01110000 01110011 00100000 01101111 01110110 01100101 01110...
-
-const decodedText = binarycode.binaryToText(binary);
-console.log(decodedText);
-// Output: The quick brown 🦊 jumps over 13 lazy 🐶.
-```
-
-Fetch Binary Data from URL
-Fetch binary data from a specified URL:
-```js
-const binarycode = require('binarycode');
-
-const url = 'https://example.com/binary-data';
-binarycode.fetchBinaryData(url).then(binaryData => {
-  console.log(binaryData);
-});
-```
-
-Text Encryption and Decryption
-Encrypt and decrypt sensitive information using a secret key:
-```js
-const binarycode = require('binarycode');
-
-const text = 'Sensitive information';
-const secretKey = 'mySecretKey';
-
-const encryptedText = binarycode.encryptText(text, secretKey);
-console.log(encryptedText);
-
-const decryptedText = binarycode.decryptText(encryptedText, secretKey);
-console.log(decryptedText);
-```
-## Discord Bot Example
-Integrating binarycode in a Discord bot:
-```js
-const Discord = require('discord.js');
-const binarycode = require('binarycode');
-
-const client = new Discord.Client();
-const token = 'YOUR_DISCORD_BOT_TOKEN';
-
-client.on('message', async message => {
-  if (message.content.startsWith('!binary')) {
-    const textToEncode = message.content.slice('!binary'.length).trim();
-    
-    // Convert text to binary
-    const binaryRepresentation = binarycode.textToBinary(textToEncode);
-
-    // Send the binary representation as a reply
-    message.reply(`Binary representation: \`${binaryRepresentation}\``);
-  }
-
-  if (message.content.startsWith('!decode')) {
-    const binaryToDecode = message.content.slice('!decode'.length).trim();
-
-    // Convert binary to text
-    const decodedText = binarycode.binaryToText(binaryToDecode);
-
-    // Send the decoded text as a reply
-    message.reply(`Decoded text: \`${decodedText}\``);
-  }
-});
-
-client.login(token);
-```
-Make sure to replace 'YOUR_DISCORD_BOT_TOKEN' with your actual Discord bot token. This example listens for messages starting with !binary and !decode, encoding and decoding text accordingly and replying with the results.
