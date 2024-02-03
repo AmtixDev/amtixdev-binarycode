@@ -1,20 +1,21 @@
 {
-  "name": "binarycode",
+  "name": "amtixdev-binarycode",
   "version": "1.0.0-beta",
-  "description": "",
+  "description": "is a versatile npm package that provides functionalities for encoding text to binary, decoding binary to text, fetching binary data from URLs, and basic text encryption/decryption.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AmtixDev/binarycode.git"
+    "url": "https://github.com/AmtixDev/amtixdev-binarycode.git"
   },
   "keywords": [
     "binary",
     "code",
     "decode",
-    "binarycode"
+    "binarycode",
+    "AmtixDev"
   ],
   "author": "AmtiXDev",
   "license": "ISC",
